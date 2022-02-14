@@ -1,4 +1,4 @@
-import Media
+from media import Media
 class Series(Media):
     def __init__(self,name, director, IMDBscore, url, duration,genres,dateRelease, cast, season, episode):
         super.__init__(self,name, director, IMDBscore, url, duration,genres,dateRelease, cast)
@@ -11,7 +11,7 @@ class Series(Media):
         return Media.showInfo(self)
     
 
-    def editClip(self):
+    def editSeries(self):
         self.name = input("Please enter new name: ")
         self.director = input("Please enter new director: ")
         self.IMDBscore = input("Please enter new IMDB: ")

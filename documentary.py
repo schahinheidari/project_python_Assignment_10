@@ -1,4 +1,5 @@
-import Media
+from media import Media
+
 class Documentary(Media):
     def __init__(self,name, director, IMDBscore, url, duration, dateRelease, cast, type):
         super.__init__(self,name, director, IMDBscore, url, duration, dateRelease, cast)

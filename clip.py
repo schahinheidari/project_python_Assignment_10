@@ -1,4 +1,4 @@
-import Media
+from media import Media
 class Clip(Media):
     def __init__(self,name, director, IMDBscore, url, duration,dateRelease, cast, theme):
         super.__init__(self,name, director, IMDBscore, url, duration,dateRelease, cast)
@@ -6,7 +6,7 @@ class Clip(Media):
 
 
     def showInfo(self):
-        return Media.showInfo(self)
+        return Media.showInfo(self), print("Type:", self.theme)
     
     def editClip(self):
         self.name = input("Please enter new name: ")

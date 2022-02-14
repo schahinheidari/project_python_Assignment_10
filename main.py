@@ -1,6 +1,10 @@
-import Actors, Clip, Documentary, Film, Media, Series
+from series import Series
+from clip import Clip
+from documentary import Documentary
+from film import Film
+from media import Media
 
-class main():
+class main:
     def __init__(self):
         self.listOfFilm = []
         file = open('database.txt', 'r')
@@ -90,13 +94,13 @@ class main():
         for i in self.listOfFilm:
             if choice == i.name:
                 if i.category == "film":
-                    i.edit_film()
+                    i.editFilm()
                 elif i.category == "series":
-                    i.edit_series()
+                    i.editSeries()
                 elif i.category == "clip":
-                    i.edit_clip()
+                    i.editClip()
                 elif i.category == "documentary":
-                    i.edit_documentary()
+                    i.editDocument()
 
     def DeleteFilm(self):
         choice = input("Please enter name of the movie that you want to delete: ")
@@ -137,7 +141,7 @@ class main():
             if i.category == "series":
                 file.write((i.category)+','+(i.name)+','+(i.director)+','+(i.IMDBscore)+','+(i.url)+','+(i.duration)+','+(i.dateRelease)+','+(i.genres)+','+(i.cast)+','+(i.season)+','+(i.episode))
             else:
-                file.write((i.category)+','+(i.name)+','+(i.director)+','+(i.IMDBscore)+','+(i.url)+','+(i.duration)+','(i.dateRelease)+','+(i.genres)+','+(i.cast))
+                file.write((i.category)+','+(i.name)+','+(i.director)+','+(i.IMDBscore)+','+(i.url)+','+(i.duration)+','+(i.dateRelease)+','+(i.genres)+','+(i.cast))
             if i != self.listOfFilm[-1]:
                 file.write('\n')
                 
